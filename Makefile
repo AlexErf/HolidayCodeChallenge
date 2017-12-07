@@ -4,9 +4,8 @@ FLAGS= --std=c++11
 
 all: holidaycode.exe
 
-holidaycode.exe: holidaycode.o day1.o day2.o day3.o day4.o day5.o day6.o
+holidaycode.exe: holidaycode.o day1.o day2.o day3.o day4.o day5.o day6.o day7.o
 	$(CC) $^ $(FLAGS) -o $@
-	rm $^
 
 holidaycode.o: holidaycode.cpp
 	$(CC) $(FLAGS) -c $^
@@ -29,6 +28,9 @@ day5.o: days/day5.cpp
 day6.o: days/day6.cpp
 	$(CC) $(FLAGS) -c $^
 
+day7.o: days/day7.cpp
+	$(CC) $(FLAGS) -c $^
+
 clean:
-	rm *.exe
+	rm *.exe rm *o
 
